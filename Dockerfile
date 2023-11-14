@@ -19,4 +19,6 @@ RUN dotnet publish "CangaLovers.csproj" -c Release -o /app/publish /p:UseAppHost
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+EXPOSE 80
+EXPOSE 443
 ENTRYPOINT ["dotnet", "CangaLovers.dll"]
