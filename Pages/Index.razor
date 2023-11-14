@@ -1,0 +1,60 @@
+﻿@page "/"
+@using CangaLovers.Data;
+
+<PageTitle>Indiretas</PageTitle>
+
+<form @onsubmit="SubmitForm">
+
+    <div class="form-group col-md-4">
+        <label for="name">Pra quem é a indireta?</label>
+        <input type="text" class="form-control" @bind="Name" />
+    </div>
+
+    <div class="form-group col-md-12">
+        <label for="text">Indireta</label>
+        <input type="text" class="form-control" @bind="Text" />
+    </div>
+
+    <div class="form-group mt-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <b />
+</form>
+
+<br />
+
+<h4>Indiretinhas</h4>
+
+@if (IndiretasList.Count > 0)
+{
+
+    <div class="list-group">
+        @foreach (var item in IndiretasList.OrderByDescending(x => x.Horario))
+        {
+            <div class="list-group-item">
+                <p class="mb-1">Nome: @item.Name</p>
+                <p class="mb-1">Indireta: @item.Indireta</p>
+                <small>Horario: @item.Horario.ToString("dd-MM-yyyy HH:mm")</small>
+            </div>
+        }
+    </div>
+
+}
+
+@code {
+    public List<Indiretas> IndiretasList = new List<Indiretas>();
+
+    private string Text { get; set; }
+    private string Name { get; set; }
+
+    private void SubmitForm()
+    {
+        if (Text.Length > 2 && Name.Length > 2)
+        {
+            IndiretasList.Add(new Indiretas { Indireta = Text, Name = this.Name });
+
+            Text = "";
+            Name = "";
+        }
+    }
+}
