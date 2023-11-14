@@ -1,8 +1,9 @@
 ﻿@page "/"
 @using CangaLovers.Data;
+@inject IndiretasContext context;
 
 <PageTitle>Indiretas</PageTitle>
-<h1>USEM COM MODERAÇÃO.</h1>
+<h1>Usem com moderação, seus escrotos.</h1>
 
 
 <form @onsubmit="SubmitForm">
@@ -49,11 +50,20 @@
     private string Text { get; set; }
     private string Name { get; set; }
 
+    protected override void OnInitialized()
+    {
+        var indiretas = context.Indiretas.ToArray();
+        IndiretasList.AddRange(indiretas);
+    }
+
     private void SubmitForm()
     {
         if (Text.Length > 2 && Name.Length > 2)
         {
-            IndiretasList.Add(new Indiretas { Indireta = Text, Name = this.Name });
+            var indireta = new Indiretas { Indireta = Text, Name = this.Name };
+            IndiretasList.Add(indireta);
+            context.Add<Indiretas>(indireta);
+            context.SaveChanges();
 
             Text = "";
             Name = "";

@@ -29,3 +29,8 @@ C:\Users\giova\Code\CangaLovers\obj\Debug\net7.0\refint\CangaLovers.dll
 C:\Users\giova\Code\CangaLovers\obj\Debug\net7.0\CangaLovers.pdb
 C:\Users\giova\Code\CangaLovers\obj\Debug\net7.0\CangaLovers.genruntimeconfig.cache
 C:\Users\giova\Code\CangaLovers\obj\Debug\net7.0\ref\CangaLovers.dll
+C:\Users\giova\Code\CangaLovers\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\giova\Code\CangaLovers\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\giova\Code\CangaLovers\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\giova\Code\CangaLovers\obj\Debug\net7.0\CangaLovers.csproj.AssemblyReference.cache
+C:\Users\giova\Code\CangaLovers\obj\Debug\net7.0\CangaLovers.csproj.CopyComplete
