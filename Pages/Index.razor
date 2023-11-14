@@ -34,7 +34,7 @@
         @foreach (var item in IndiretasList.OrderByDescending(x => x.Horario))
         {
             <div class="list-group-item">
-                <p class="mb-1">Nome: @item.Name</p>
+                <p class="mb-1">Para: @item.Name</p>
                 <p class="mb-1">Indireta: @item.Indireta</p>
                 <small>Horario: @item.Horario.ToString("dd-MM-yyyy HH:mm")</small>
             </div>
