@@ -58,7 +58,7 @@
 
     private void SubmitForm()
     {
-        if (Text.Length > 2 && Name.Length > 2)
+        if (Text.Length > 1 && Name.Length > 1)
         {
             var indireta = new Indiretas { Indireta = Text, Name = this.Name };
             IndiretasList.Add(indireta);
