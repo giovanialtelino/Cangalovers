@@ -2,7 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 843
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
@@ -18,6 +18,6 @@ RUN dotnet publish "CangaLovers.csproj" -c Release -o /app/publish /p:UseAppHost
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-EXPOSE 80
-ENV ASPNETCORE_URLS=http://+:80
+EXPOSE 843
+## ENV ASPNETCORE_URLS=http://+:843
 ENTRYPOINT ["dotnet", "CangaLovers.dll"]
