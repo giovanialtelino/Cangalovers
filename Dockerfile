@@ -18,6 +18,5 @@ RUN dotnet publish "CangaLovers.csproj" -c Release -o /app/publish /p:UseAppHost
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-EXPOSE 843
-ENV ASPNETCORE_URLS="http://+:843"
+EXPOSE 80
 ENTRYPOINT ["dotnet", "CangaLovers.dll"]
