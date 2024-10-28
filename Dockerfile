@@ -20,6 +20,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 EXPOSE 80
-EXPOSE 443
 ENV ASPNETCORE_URLS=http://+:80
 ENTRYPOINT ["dotnet", "CangaLovers.dll"]
