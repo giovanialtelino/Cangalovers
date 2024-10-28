@@ -13,10 +13,10 @@ WORKDIR "/src/."
 RUN dotnet build "CangaLovers.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CangaLovers.csproj" -c Release -o /app/publish /p:UseAppHost=false
-
+RUN dotnet publish "CangaLovers.csproj" -c Release -o /app/publish 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 EXPOSE 80
+ENV ASPNETCORE_URLS=http://+:80
 ENTRYPOINT ["dotnet", "CangaLovers.dll"]
